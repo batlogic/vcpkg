@@ -1,0 +1,4 @@
+The package vst3sdk provides CMake integration:
+
+    find_package(vst3sdk REQUIRED)
+    target_include_directories(<my_target> PRIVATE ${VST3SDK_INCLUDE_DIR})

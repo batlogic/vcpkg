@@ -1,0 +1,15 @@
+Source: vst3sdk
+Version: 3.6.12 / 3.6.6
+Homepage: https://www.steinberg.net/en/company/developers.html
+Description: Installs version 3.6.12 of Steinberg's VST 3 Plug-In SDK - including VST2 wrapper.  
+If you wish to also have support for legacy VST2 Plug-ins, then use the [legacy] feature when installing
+and it will install version 3.6.6 which integrates the legacy VST2 much better.
+
+Feature: tools
+Description: Build and install the VSTGUI Tools.
+
+Feature: examples
+Description: Build the VST example projects.
+
+Feature: legacy
+Description: This will install version 3.6.6 of the library that better integrates both VST2 and VST3.
