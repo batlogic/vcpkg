@@ -38,10 +38,10 @@ if(USE_VST3SDK_V367)
 
 else()
 	message(STATUS "Using lastest version of vst3sdk that contains vst2sdk wrappers.")
-	vcpkg_download_distfile(archive
-		urls "https://download.steinberg.net/sdk_downloads/vstsdk3612_03_12_2018_build_67.zip"
-		filename "vstsdk3612_03_12_2018_build_67.zip"
-		sha512 7f39bf01c055c6ae11f8d982222b511446b9dd9d04ba41344d0d9692ecf491f1e994e8e7e432fef3846eb768ba88a537be46a0b2cd6b9793b72f211ea5c67630
+	vcpkg_download_distfile(ARCHIVE
+		URLS "https://download.steinberg.net/sdk_downloads/vstsdk3612_03_12_2018_build_67.zip"
+		FILENAME "vstsdk3612_03_12_2018_build_67.zip"
+		SHA512 7f39bf01c055c6ae11f8d982222b511446b9dd9d04ba41344d0d9692ecf491f1e994e8e7e432fef3846eb768ba88a537be46a0b2cd6b9793b72f211ea5c67630
 	)
 endif()
 
@@ -56,14 +56,9 @@ vcpkg_extract_source_archive_ex(
 
 message(STATUS "Building ${TARGET_TRIPLET}")
 
+#copy vst2 files into vst3 directory
 if(NOT USE_VST3SDK_V367)
-	# vcpkg_execute_required_process(
-		# COMMAND ${SOURCE_PATH}/VST_SDK/copy_vst2_to_vst3_sdk.bat
-		# WORKING_DIRECTORY ${SOURCE_PATH}/VST_SDK
-		# LOGNAME copy-vst2-to-vst3-${TARGET_TRIPLET}
-	# )
-	
-	copy(FILE ${SOURCE_PATH}/VST_SDK/VST2_SDK ${SOURCE_PATH}/VST_SDK/VST3_SDK)
+	FILE(COPY ${SOURCE_PATH}/VST_SDK/VST2_SDK/ DESTINATION ${SOURCE_PATH}/VST_SDK/VST3_SDK/)
 	
 endif()
 
