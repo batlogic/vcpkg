@@ -47,7 +47,7 @@ if (NOT "${VST3SDK_HOME}" STREQUAL "")
 endif()
 
 
-message(" FindAsiosdk VST3SDK_INCLUDE_DIR : ${VST3SDK_INCLUDE_DIR}")
+message(" Findvst3sdk VST3SDK_INCLUDE_DIR : ${VST3SDK_INCLUDE_DIR}")
 
 # handle the QUIETLY and REQUIRED arguments and set VST3SDK_FOUND to TRUE if 
 # all listed variables are TRUE
